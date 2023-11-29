@@ -11,7 +11,7 @@ export default async function middleware(request: NextRequest) {
   const config: NextConfig = await getAll();
 
   console.log("\nMiddleware: ", url.pathname);
-  console.log(url, config, digest);
+  console.log(url, config, await digest());
   console.log("---------------------------");
 
   const redirects = config.redirects;
